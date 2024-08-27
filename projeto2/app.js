@@ -9,8 +9,10 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/projects', projectsRoutes)
 
+app.use('/',projectsRoutes )
 
 app.listen(port, () => {
     console,console.log(`O servidor esta rotando na porta ${port}`);
     
+
 })
