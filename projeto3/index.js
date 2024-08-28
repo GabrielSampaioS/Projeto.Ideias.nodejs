@@ -6,7 +6,7 @@ const path = require('path')
 
 const app = express();
 
-//definir oartials
+//definir partials
 const hbs = exphbs.create({
     partialsDir:['views/partials'],
 })
@@ -19,39 +19,48 @@ app.use(express.static(path.join(__dirname,'public')))
 
 // Configurando Server -- FIM
 
-// Lidando com rotas
 
+// Criando dados 
 
-// Lidando com rotas -- FIM
+const posts = [
+  {
+    id: 1,
+    nome: "João Silva",
+    idade: 30,
+    profissao: "Engenheiro de Software",
+    cidade: "São Paulo",
+    interesses: ["Programação", "Futebol", "Música"]
+  },
+  {
+    id: 2,
+    nome: "Maria Oliveira",
+    idade: 25,
+    profissao: "Designer Gráfico",
+    cidade: "Rio de Janeiro",
+    interesses: ["Design", "Fotografia", "Viagens"]
+  },
+  {
+    id: 3,
+    nome: "Carlos Pereira",
+    idade: 28,
+    profissao: "Analista de Dados",
+    cidade: "Belo Horizonte",
+    interesses: ["Estatística", "Tecnologia", "Cinema"]
+  }
+];
+
+// Criando dados -- FIM
+
 
 app.get('/', (req, res) => {
 
-    const posts = [
-        {
-          nome: "João Silva",
-          idade: 30,
-          profissao: "Engenheiro de Software",
-          cidade: "São Paulo",
-          interesses: ["Programação", "Futebol", "Música"]
-        },
-        {
-          nome: "Maria Oliveira",
-          idade: 25,
-          profissao: "Designer Gráfico",
-          cidade: "Rio de Janeiro",
-          interesses: ["Design", "Fotografia", "Viagens"]
-        },
-        {
-          nome: "Carlos Pereira",
-          idade: 28,
-          profissao: "Analista de Dados",
-          cidade: "Belo Horizonte",
-          interesses: ["Estatística", "Tecnologia", "Cinema"]
-        }
-      ];
-      
-
     res.render('home', {posts})
+})
+
+app.get('/perfil/:id', (req, res) => {
+  const perfil = posts[parseInt(req.params.id) - 1]
+
+  res.render('perfil', {perfil})
 })
 
 app.listen(3000, () => {
