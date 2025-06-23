@@ -1,0 +1,17 @@
+<div class="ideia-form-container">
+    <a href="/ideias/dashborad">Voltar</a>
+    <h1>Criar uma nova ideias</h1>
+    <form action="/ideias/novaIdeias" method="POST">
+        <div class="form-control">
+            <label for="titulo">Título:</label>
+            <input type="text" id="titulo" name="titulo" placeholder="Descerva o titulo da ideia" required>
+
+            <label for="descricao">Descrição</label>
+            <textarea id="descricao" name="descricao" rows="4" placeholder="Descerva sua ideia" required></textarea>
+        </div>
+        <input type="reset" value="Limpar" class="btn">
+        <input type="submit" value="Criar Ideia" class="btn">
+        
+       
+    </form>
+</div>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IdealHub</title>
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Boots -->
+
+</head>
+
+<body>
+    <nav id="navbar">
+        <a href="/" id="logo">
+            <img src="/img/lampada.png" alt="Ideias Logo" width="50" height="50">
+        </a>
+        <ul>
+            <!-- URLs validação -->
+            {{#if session.userid}}
+            <li><a href="/ideias">Ideias</a></li>
+            <li><a href="/ideias/dashboard">Dashboard</a></li>
+            <li><a href="/logout">Sair</a></li>
+            {{else}}
+            <li><a href="/ideias">Ideias</a></li>
+            <li><a href="/Login">Login</a></li>
+            <li><a href="/register">Registrar</a></li>
+            {{/if}}
+        
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <!-- Mensagem -->
+        {{#if messages.message}}
+        <div class="message">
+            <p>{{messages.message}}</p>
+        </div>
+        {{/if}}
+
+
+        {{{body}}}
+    </div>
+
+    <footer>
+        <p><span>Ideias</span> &copy;2025</p>
+    </footer>
+
+</body>
+
+</html>
