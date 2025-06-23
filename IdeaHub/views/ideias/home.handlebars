@@ -1,1 +1,20 @@
 <h1>Todos os pensamentos</h1>
+
+{{#each ideiasRetorno}}
+<div class="ideias">
+    <li>
+        <div class="ideia-dados">
+            <span class="dono">{{this.userName}}</span>
+            <span class="dataCricao">{{this.dataFormatada}}</span>
+        </div>
+        <div class="ideia-info">
+            <span class="title">{{this.title}} :</span>
+            <span class="descricao">{{this.description}}</span>
+        </div>
+    </li>
+
+</div>
+
+{{else}}
+<h1>Estamos sem ideias ;C</h1>
+{{/each}}

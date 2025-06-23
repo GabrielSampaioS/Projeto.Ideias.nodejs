@@ -1,8 +1,30 @@
 <div class="dashboard">
     <div class="title-container">
-        <h2>dashboard</h2>
+        <h2>Todos as suas ideias</h2>
         <a href="/ideias/novaIdeia" class="btn">Add Pensamento</a>
     </div>
 
     <h3>Seus Pensamentos</h3>
+    <ul>
+        {{#each ideiasRetorno}}
+        <li>
+            <div class="ideia-info">
+                <span class="title">{{this.title}}</span>
+                <span class="descricao">{{this.description}}</span>
+            </div>
+
+            <div class="ideia-actions">
+                <a href="/ideias/editar/{{_id}}" class="btn">Editar</a>
+                <form action="/">
+                    <input type="hidden" name="_id" value="{{_id}}">
+                    <input type="submit" value="Apagar" class="btn-del">
+                </form>
+            </div>
+
+
+        </li>
+        {{else}}
+        <li>Nenhum pensamento encontrado.</li>
+        {{/each}}
+    </ul>
 </div>

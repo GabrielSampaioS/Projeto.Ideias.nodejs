@@ -34,7 +34,7 @@ module.exports = class AuthController {
 
         if (password !== confirmpassword) {
             req.flash('message', 'Passwords do not match!');
-            return res.redirect('/register');
+            return res.redirect('register');
         }
 
         // Check if user already exists
