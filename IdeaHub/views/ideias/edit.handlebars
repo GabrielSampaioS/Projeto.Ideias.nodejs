@@ -1,0 +1,18 @@
+<div class="ideia-form-container">
+    <a href="/ideias/dashboard">Voltar</a>
+    <h1>Editar uma velha ideia</h1>
+    <form action="/ideias/edit" method="POST">
+    <input type="hidden" name="id" value="{{ideia.IdIdeia}}">
+        <div class="form-control">
+            <label for="titulo">Título:</label>
+            <input type="text" id="title" name="title" placeholder="Descerva o titulo da ideia" required value="{{ideia.title}}">
+
+            <label for="descricao">Descrição</label>
+            <textarea id="description" name="description" rows="4" placeholder="Descreva sua ideia" required>{{ideia.description}}</textarea>
+        </div>
+        <input type="reset" value="Limpar" class="btn">
+        <input type="submit" value="Editar Ideia" class="btn">
+        
+       
+    </form>
+</div> 

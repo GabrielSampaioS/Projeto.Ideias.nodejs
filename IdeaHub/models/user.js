@@ -3,6 +3,12 @@ const { DataTypes } = require('sequelize');
 const db = require('../db/conn');
 
 const User = db.define('Users', {
+    IdUser:{
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
+        allowNull: false,
+    },
     name: {
         type: DataTypes.STRING,
         allowNull: false,

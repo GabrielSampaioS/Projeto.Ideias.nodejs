@@ -4,7 +4,7 @@
         <a href="/ideias/novaIdeia" class="btn">Add Pensamento</a>
     </div>
 
-    <h3>Seus Pensamentos</h3>
+    
     <ul>
         {{#each ideiasRetorno}}
         <li>
@@ -14,11 +14,12 @@
             </div>
 
             <div class="ideia-actions">
-                <a href="/ideias/editar/{{_id}}" class="btn">Editar</a>
-                <form action="/">
-                    <input type="hidden" name="_id" value="{{_id}}">
+                <form action="/ideias/deletaIdeia" method="post">
+                    <input type="hidden" name="id" value="{{this.IdIdeia}}">
                     <input type="submit" value="Apagar" class="btn-del">
                 </form>
+                <a href="/ideias/editar/{{this.IdIdeia}}" class="btn">Editar</a>
+                
             </div>
 
 

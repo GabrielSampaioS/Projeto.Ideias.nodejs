@@ -182,7 +182,8 @@ title-container h2 {
 
 .dashboard .ideia-actions {
     display: flex;
-    align-items: center;
+
+    flex-direction: row-reverse;
     
 }
 
@@ -202,6 +203,10 @@ title-container h2 {
 }
 
 /*Ideias*/
+/*.ideia-dados{
+
+}*/
+
 .ideias li {
     padding: 12px;
     border-bottom: 1px solid #f6982d;
@@ -209,6 +214,8 @@ title-container h2 {
     /*ign-items: center;
     justify-content: space-between;*/
 }
+
+
 
 /*Footer*/
 

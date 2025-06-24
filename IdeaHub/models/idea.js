@@ -6,6 +6,12 @@ const db = require('../db/conn');
 const User = require('./user');
 
 const Idea = db.define('Ideas', {
+    IdIdeia:{
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
+        allowNull: false,
+    },
     title: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -16,15 +22,15 @@ const Idea = db.define('Ideas', {
         allowNull: false,
         require: true,
     },
-})
-
-Idea.belongsTo(User)
-// Define the association between Idea and User
-User.hasMany(Idea, {
-    //foreignKey: 'userId',
-    //allowNull: false,
-   // onDelete: 'CASCADE', // If a user is deleted, their ideas will also be deleted
+    IdUser: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+    }
 });
+
+Idea.belongsTo(User, {foreignKey: 'IdUser'});
+// Define the association between Idea and User
+User.hasMany(Idea, {foreignKey: 'IdUser'});
 
 
 module.exports = Idea;  

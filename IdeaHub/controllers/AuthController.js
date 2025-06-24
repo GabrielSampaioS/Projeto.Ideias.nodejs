@@ -57,7 +57,7 @@ module.exports = class AuthController {
         try {
             const createdUser = await User.create(user);
 
-            req.session.userid = createdUser.id;
+            req.session.userid = createdUser.IdUser;
             req.flash('message', 'User created successfully!');
             req.session.save(() => {
                 res.redirect('/');
@@ -101,7 +101,7 @@ module.exports = class AuthController {
 
         // Create session
         //req.session.authenticated = true;
-        req.session.userid = user.id;
+        req.session.userid = user.IdUser;
         // If everything is ok, save user id in session
         req.session.save(() => {
             res.redirect('/');
