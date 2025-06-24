@@ -1,3 +1,4 @@
+// db/conn.js
 const { Sequelize } = require('sequelize');
 
 let sequelize;
@@ -19,3 +20,5 @@ if (process.env.DATABASE_URL) {
     dialect: 'mysql',
   });
 }
+
+module.exports = sequelize;
